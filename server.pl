@@ -5,6 +5,7 @@ use Tk;
 
 system "nc -l -p 3000 >> testFile | tee output.log";
 
+<<<<<<< HEAD
 print "Checksum == ";
 system "md5sum memoryImage.dd";
 
@@ -33,3 +34,18 @@ $mw->Button(
 
 
 MainLoop;
+=======
+     print "Checksum == ";
+     system "md5sum memoryImage.dd";
+	 
+print "Select an Option to perform Analysis on the acquired memory image\n";
+print " 1) View Strings\n\n";
+
+print "Choice > ";
+$choice = <>;
+
+if ($choice == 1)
+{
+    system ("strings memoryImage.dd | more");
+}
+>>>>>>> c8c0fac828fdcc0418f27cd5d7c828bf72e2c808
