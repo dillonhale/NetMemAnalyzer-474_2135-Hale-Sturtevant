@@ -45,7 +45,7 @@ May not extract partial files from memory, only searches for start and end of fi
 This program and all source code is released under GPLv2. Please see LICENSE included with this distribution for more information.
 
 ##Authors
-This application was created as an assignment for our Unix Forensics class at Rochester Institute of Technology. If you have any questions, comments or would like to contribute to this project, feel free to reach out to one of us.
+This application was created as an assignment for our Unix Forensics class at Rochester Institute of Technology. Currently this application is warrented 'as is' and may not be further developed. If you have any questions, comments or would like to contribute to this project, feel free to reach out to one of us.
 
 - Dillon Hale - Drh9473@rit.edu - www.dillonhale.com
 - Alicia Sturtevant - Aas5999@rit.edu
