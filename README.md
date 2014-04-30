@@ -27,11 +27,10 @@ Server:
    Analyzing Memory Images:
     - Scan for Strings - this option prompts with a dialog box that allows the investigator to search the memory image for specific string values
    
-    - Save Images Locally Checkbox - by default, NetMemAnalyzer carves file data from the memory image without saving the located files to the investigators machine. The data is then compared to a list of known bad file checksums. If you would like to save any carved file data to the investigators local machine - check this box
+    - Save Images Locally Checkbox - by default, NetMemAnalyzer carves file data from the memory image without saving the located files to the investigators machine. If you would like to save the carved file data to the investigators local machine - check this box
    
-    - Carve JPG
-    - Carve PDF
-    - Carve GIF
+   
+    - Carve JPG, PNG, GIF - The carve options extracts  file data from the memory image and compares it against a list of known bad hashes. The investigator is alerted when a known bad file is located. 
 
 Client:
 The client was built to have less overhead and to preserve as much memory evidence as possible. 
