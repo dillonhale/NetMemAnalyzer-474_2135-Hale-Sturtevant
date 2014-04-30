@@ -8,7 +8,7 @@ NetMemAnalyzer is a client/server memory analyzer that creates an image of a dev
  * Search for specific strings
  * Extraction of JPG, PNG and GIF files from memory image
 
-##Requirements:
+#Requirements:
 Our application is currently supported on UNIX/Linux Operating Systems:
  * Kali Linux
  * Other versions of Linux have not been tested yet, although may still be compatible.
@@ -18,7 +18,7 @@ The following extensions are required to use NetMemAnalyzer:
  * Ncat
  * Fmem
 
-##Installation and Use:
+#Installation and Use:
 Server:
  - Prior to starting the NetMemAnalyzer Server, ensure that Perl is installed with the perk tk module.
  - Start the server script
