@@ -4,14 +4,16 @@ use strict;
 use Tk;
 use Digest::SHA qw(sha256_hex);
 
-my $imageFile = "newImage1.dd";
+my $imageFile = "image.dd";
 my %fileList;
+my $listeningPort = "3000";
 my $saveLocallyStatus = 0;
 
-#system "nc -w60 -l -p 31 >> image.dd &";
+# Timeout connection after 45 seconds
+system "nc -w45 -l -p $listeningPort >> $imageFile &";
 
 my $mw = MainWindow->new;
-$mw->geometry("620x370");
+$mw->geometry("620x390");
 $mw->title("NetMemAnalyzer");
 
 $mw->Label( -text => "Welcome to NetMemAnalyzer \nPlease wait for the image to completly transfer before analyzing!", -foreground=>'blue')
@@ -83,6 +85,12 @@ $mw->Checkbutton(
 	-row => 8,
 	-column => 1,
 	-columnspan => 2);
+
+$mw->Label( -text => "Listening on port: $listeningPort", -foreground=>'dark green')
+   ->grid(
+	-row => 9,
+	-column => 1,
+	-columnspan =>2);
 
 $mw->Button(
      -text => "Exit",
@@ -173,7 +181,7 @@ sub carvePNG()
 			# Convert input buffer to hex
 			$hex = unpack('H*', $fileBuffer);
 
-			# Search for jpg header and trailer
+			# Search for png header and trailer
 			if ($hex =~ m/(89504e470d0a1a0a(?:(?!89504e470d0a1a0a).)*ae426082)/i)
 			{                 
 				# Trim any leading hex and trailing zeros off of the buffer
@@ -220,7 +228,7 @@ sub carveGIF()
 			# Convert input buffer to hex
 			$hex = unpack('H*', $fileBuffer);
 
-			# Search for jpg header and trailer
+			# Search for gif header and trailer
 			if ($hex =~ m/(47494638(?:(?!47494638).)*1110003b)/i)
 			{                 
 				# Trim any leading hex and trailing zeros off of the buffer
